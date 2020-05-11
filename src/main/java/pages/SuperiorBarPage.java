@@ -17,21 +17,19 @@ public class SuperiorBarPage {
     private WebDriver driver;
 
     private By btnConteudodigital = By.className("custom-logo");
-    private By btnHome = By.linkText("https://www.conteudodigital.net.br");
-    private By btnSobre = By.linkText("https://www.conteudodigital.net.br/sobre/");
-    private By btnQuemSomos = By.linkText("https://www.conteudodigital.net.br/quem-somos/");
-    private By btnBlog = By.linkText("https://www.conteudodigital.net.br/blog/");
-    private By btnContato = By.linkText("https://www.conteudodigital.net.br/#contact");
+    private By btnHome = By.cssSelector("#menu-item-63");
+    private By btnSobre = By.cssSelector("#menu-item-71");
+    private By btnQuemSomos = By.cssSelector("#menu-item-72");
+    private By btnBlog = By.cssSelector("#menu-item-116");
+    private By btnContato = By.cssSelector("#menu-item-191");
 
     public SuperiorBarPage(WebDriver driver) {
         this.driver = driver;
     }
 
     public void btnConteudodigitalClick() {
-        //driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
-        //wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnConteudodigital)));
         driver.findElement(btnConteudodigital).click();
         System.out.println("just clicked on btnConteudodigital");
     }
@@ -40,19 +38,40 @@ public class SuperiorBarPage {
         driver.findElement(btnHome).click();
     }
 
-    public void btnSobreClick() {
+    public SobrePage btnSobreClick() {
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnSobre)));
         driver.findElement(btnSobre).click();
+        System.out.println("just clicked on btnSobre");
+        return new SobrePage(driver);
     }
 
-    public void btnQuemSomosClick() {
+    public QuemSomosPage btnQuemSomosClick() {
+
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnQuemSomos)));
         driver.findElement(btnQuemSomos).click();
+        System.out.println("just clicked on btnQuemSomos");
+        return new QuemSomosPage(driver);
     }
 
-    public void btnBlogClick() {
+    public BlogPage btnBlogClick() {
+
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnBlog)));
         driver.findElement(btnBlog).click();
+        System.out.println("just clicked on btnBlog");
+        return new BlogPage(driver);
     }
 
     public void btnContatoClick() {
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnContato)));
         driver.findElement(btnContato).click();
+        System.out.println("just clicked on btnContato");
     }
 }
