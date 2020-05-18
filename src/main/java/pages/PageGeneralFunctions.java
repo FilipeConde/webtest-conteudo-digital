@@ -1,6 +1,9 @@
 package pages;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class PageGeneralFunctions {
 
@@ -17,6 +20,11 @@ public class PageGeneralFunctions {
 
     public String getCurrentUrl() {
         return driver.getCurrentUrl();
+    }
+
+    public void loaderWait() {
+        WebDriverWait loaderWait = new WebDriverWait(driver, 15);
+        loaderWait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
     }
 
 }

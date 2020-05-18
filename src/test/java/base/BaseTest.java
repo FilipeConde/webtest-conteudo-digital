@@ -9,7 +9,7 @@ import pages.SuperiorBarPage;
 
 public class BaseTest {
 
-    private static WebDriver driver;
+    protected static WebDriver driver;
     protected static HomePage homePage;
     protected static SuperiorBarPage superiorBarPage;
 
@@ -20,7 +20,7 @@ public class BaseTest {
         driver = new FirefoxDriver();
         homePage = new HomePage(driver);
         superiorBarPage = new SuperiorBarPage(driver);
-        driver.get("https://www.conteudodigital.net.br/");
+        //driver.get("https://www.conteudodigital.net.br/");
     }
 
     @AfterClass

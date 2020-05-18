@@ -31,7 +31,6 @@ public class SuperiorBarPage {
         WebDriverWait wait = new WebDriverWait(driver, 15);
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
         driver.findElement(btnConteudodigital).click();
-        System.out.println("just clicked on btnConteudodigital");
     }
 
     public void btnHomeClick() {
@@ -43,7 +42,6 @@ public class SuperiorBarPage {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnSobre)));
         driver.findElement(btnSobre).click();
-        System.out.println("just clicked on btnSobre");
         return new SobrePage(driver);
     }
 
@@ -53,7 +51,6 @@ public class SuperiorBarPage {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnQuemSomos)));
         driver.findElement(btnQuemSomos).click();
-        System.out.println("just clicked on btnQuemSomos");
         return new QuemSomosPage(driver);
     }
 
@@ -63,7 +60,6 @@ public class SuperiorBarPage {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnBlog)));
         driver.findElement(btnBlog).click();
-        System.out.println("just clicked on btnBlog");
         return new BlogPage(driver);
     }
 
@@ -72,6 +68,5 @@ public class SuperiorBarPage {
         wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("preloader")));
         wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(btnContato)));
         driver.findElement(btnContato).click();
-        System.out.println("just clicked on btnContato");
     }
 }
