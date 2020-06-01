@@ -5,13 +5,13 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.HomePage;
-import pages.SuperiorBarPage;
+import utils.SuperiorBar;
 
 public class BaseTest {
 
     protected static WebDriver driver;
     protected static HomePage homePage;
-    protected static SuperiorBarPage superiorBarPage;
+    protected static SuperiorBar superiorBar;
 
     @BeforeClass
     public static void setUp() {
@@ -19,7 +19,7 @@ public class BaseTest {
         System.setProperty("webdriver.gecko.driver", "resources/geckodriver");
         driver = new FirefoxDriver();
         homePage = new HomePage(driver);
-        superiorBarPage = new SuperiorBarPage(driver);
+        superiorBar = new SuperiorBar(driver);
         //driver.get("https://www.conteudodigital.net.br/");
     }
 

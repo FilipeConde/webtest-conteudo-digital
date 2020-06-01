@@ -1,4 +1,4 @@
-package pages;
+package utils;
 
 import org.junit.Assert;
 import org.openqa.selenium.By;
@@ -8,11 +8,14 @@ import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.BlogPage;
+import pages.QuemSomosPage;
+import pages.SobrePage;
 
 
 import java.util.concurrent.TimeUnit;
 
-public class SuperiorBarPage {
+public class SuperiorBar {
 
     private WebDriver driver;
 
@@ -23,7 +26,7 @@ public class SuperiorBarPage {
     private By btnBlog = By.cssSelector("#menu-item-116");
     private By btnContato = By.cssSelector("#menu-item-191");
 
-    public SuperiorBarPage(WebDriver driver) {
+    public SuperiorBar(WebDriver driver) {
         this.driver = driver;
     }
 
