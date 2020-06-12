@@ -5,6 +5,7 @@ import org.junit.BeforeClass;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import pages.HomePage;
+import pages.QuemSomosPage;
 import utils.SuperiorBar;
 
 public class BaseTest {
@@ -12,6 +13,7 @@ public class BaseTest {
     protected static WebDriver driver;
     protected static HomePage homePage;
     protected static SuperiorBar superiorBar;
+    protected static QuemSomosPage quemSomosPage;
 
     @BeforeClass
     public static void setUp() {
@@ -20,7 +22,6 @@ public class BaseTest {
         driver = new FirefoxDriver();
         homePage = new HomePage(driver);
         superiorBar = new SuperiorBar(driver);
-        //driver.get("https://www.conteudodigital.net.br/");
     }
 
     @AfterClass

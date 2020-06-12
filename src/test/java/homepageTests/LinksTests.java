@@ -87,20 +87,18 @@ public class LinksTests extends BaseTest {
     //public void mustAccessBtnFacebokAlysson() {
     //
     //}
-/*
-    @Test
-    public void mustAccessBtnLinkedInAlysson() throws InterruptedException {
-        AnyPage anyPage = homePage.btnLinkedInAlyssonClick();
-        String title = "Alysson Mainieri";
-        System.out.println(anyPage.getCurrentUrl());
-        driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        Thread.sleep(5000);
-        anyPage.switchToTab(title);
 
-        Assert.assertTrue(anyPage.getTitle().contains(title));
+    @Test
+    public void mustAccessBtnFacebookAlysson() throws InterruptedException {
+        AnyPage anyPage = homePage.btnFacebookAlyssonClick();
+        String webUrl = "https://www.facebook.com/alysson.mainieri";
+        Thread.sleep(4000);
+        anyPage.switchToTab("Alysson Mainieri");
+        System.out.println(homePage.getCurrentUrl());
+        System.out.println(anyPage.getCurrentUrl());
+        Assert.assertTrue(anyPage.getCurrentUrl().equals(webUrl));
     }
-*/
-//TODO solve the new tab problem
+
 
     @Test
     public void mustAccessBtnFacebookStephanie() throws InterruptedException {
@@ -126,13 +124,17 @@ public class LinksTests extends BaseTest {
         Assert.assertTrue(anyPage.getCurrentUrl().equals(webUrl));
     }
 */
-/*
+
     //saiba mais section
     @Test
     public void mustAccessBtnSaibaMais() {
 
-    }
+        QuemSomosPage quemSomosPage = homePage.btnSaibaMaisClick();
+        String partialTitle = "QUEM SOMOS";
+        Assert.assertTrue(quemSomosPage.getTitle().contains(partialTitle));
 
+    }
+/*
     //blog section (on home page)
 //Set of tests for the
 //
@@ -150,34 +152,7 @@ public class LinksTests extends BaseTest {
 
     }
     */
-    @Test
-    public void mustAccessBtnSaibaMais() {
-        QuemSomosPage quemSomosPage = homePage.btnSaibaMaisClick();
-        String webUrl = "https://www.conteudodigital.net.br/quem-somos/";
-        Assert.assertTrue(quemSomosPage.getCurrentUrl().equals(webUrl));
-    }
 
-    //TODO create this test
-/*
-    @Test
-    public void blogCarouselNavigation() throws InterruptedException {
-        List carouselPosts = homePage.getCarouselVisiblePostList();
-        homePage.carouselToLeftClick();
-        Thread.sleep(4000);
-        //Assert.assertTrue(homePage.getCarouselVisiblePostList() != carouselPosts);
-        homePage.carouselToRightClick();
-        Thread.sleep(4000);
-        Assert.assertTrue(homePage.getCarouselVisiblePostList() == carouselPosts);
-    }
-
-
-    @Test
-    public void mustAccessBtnFacebookCD() {
-        AnyPage anyPage = homePage.btnFacebookCDClick();
-        String partialTitle = "Conteúdo Digital - Home";
-        Assert.assertTrue(anyPage.getTitle().contains(partialTitle));
-    }
-*/
     @Test
     public void mustAccessBtnInstagramCD() {
         AnyPage anyPage = homePage.btnInstagramCDClick();

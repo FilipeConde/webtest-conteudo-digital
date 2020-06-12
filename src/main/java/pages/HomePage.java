@@ -42,12 +42,14 @@ public class HomePage extends PageGeneralFunctions {
     private By btnFacebookCD = By.cssSelector(".fa.fa-facebook");
     private By btnInstagramCD = By.cssSelector(".fa.fa-instagram");
 
-//    private By btnFacebookAlysson = By.cssSelector("a[href='https://www.facebook.com/alysson.mainieri']");
+    private By btnFacebookAlysson = By.cssSelector("a[href='https://www.facebook.com/alysson.mainieri']");
 //    private By btnLinkedInAlysson = By.cssSelector(".fa.fa-linkedin");
     private By btnFacebookStephanie = By.cssSelector("#zerif_team-widget-8 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)");
 //    private By btnLinkedInStephanie = By.cssSelector("#zerif_team-widget-8 > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > ul:nth-child(1) > li:nth-child(2) > a:nth-child(1) > i:nth-child(2)");
 
     private By btnSaibaMais = By.cssSelector(".col-md-3 .red-btn");
+
+
     public HomePage(WebDriver driver) {
         super(driver);
         this.driver = driver;
@@ -116,12 +118,13 @@ public class HomePage extends PageGeneralFunctions {
         return new PortfolioMobileMarketingPage(driver);
     }
 //TODO solve the new tab problem
-/*
-    public void btnFacebookAlyssonClick() {
+
+    public AnyPage btnFacebookAlyssonClick() {
         loaderWait();
         driver.findElement(btnFacebookAlysson).click();
+        return new AnyPage(driver);
     }
-*/
+
 /*
     public AnyPage btnLinkedInAlyssonClick() {
         loaderWait();

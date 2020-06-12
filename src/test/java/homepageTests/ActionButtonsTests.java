@@ -5,7 +5,7 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class ActionButtonsTests extends BaseTest {
-
+//TODO elaborar testes
 /*
     @Test
     public void mustTriggerMouseOverAlyssonMsg() {
@@ -17,21 +17,26 @@ public class ActionButtonsTests extends BaseTest {
 
     }
 
-    @Test
-    public void mustTriggerBtnBlogNavigateLeft() {
 
+    @Test
+    public void blogCarouselNavigation() throws InterruptedException {
+        List carouselPosts = homePage.getCarouselVisiblePostList();
+        homePage.carouselToLeftClick();
+        Thread.sleep(4000);
+        //Assert.assertTrue(homePage.getCarouselVisiblePostList() != carouselPosts);
+        homePage.carouselToRightClick();
+        Thread.sleep(4000);
+        Assert.assertTrue(homePage.getCarouselVisiblePostList() == carouselPosts);
     }
 
-    @Test
-    public void mustTriggerBtnBlogNavigateRight() {
 
+    @Test
+    public void mustAccessBtnFacebookCD() {
+        AnyPage anyPage = homePage.btnFacebookCDClick();
+        String partialTitle = "Conteúdo Digital - Home";
+        Assert.assertTrue(anyPage.getTitle().contains(partialTitle));
     }
 */
-    @Test
-    public void mustTriggerBtnEnviar() {
-        homePage.sendMessage();
-        String sentMsgResponse = "Agradecemos pelo contato! Em breve retornaremos sua mensagem";
-        Assert.assertTrue(homePage.getSentEmailResponse().contains(sentMsgResponse));
-    }
+
 
 }
